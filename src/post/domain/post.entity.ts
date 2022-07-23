@@ -26,8 +26,8 @@ export default class Post {
   @UpdateDateColumn({ type: 'timestamp' })
   updated_at!: Date;
 
-  static of(title: string, shortDescription: string) {
-    if (!title || !shortDescription) {
+  static of(title: string, shortDescription?: string) {
+    if (!title) {
       throw new Error('invalid args');
     }
     const post = new Post();
