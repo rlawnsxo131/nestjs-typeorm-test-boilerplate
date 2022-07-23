@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  john-postgresql:
+    image: postgres:latest
+    volumes:
+      - ./postgresql/data/:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    restart: always
+    container_name: john-postgresql
+    environment:
+      POSTGRES_USER: john
+      POSTGRES_PASSWORD: 1234
+      # TZ: Asia/Seoul
